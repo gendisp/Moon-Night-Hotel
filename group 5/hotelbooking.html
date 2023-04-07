@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ticket Payment</title>
+    <link rel="stylesheet" href="css/styless.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>src="https://code.jquery.com/jquery-3.2.1.slim.min.js" </script>
+    <script>src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"</script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <center> <img src="images/logohotel.png" alt="logo"></center>
+    <div class="container">
+      <form>
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" autofocus autocomplete="off" />
+       
+        <label for="email">Email:</label>
+        <input type="text" id="email" autofocus autocomplete="off" />
+        
+        <label for="phonenumber">Phone Number:</label>
+        <input type="text" id="phonenumber" autofocus autocomplete="off" />
+       
+        <label for="checkin">Check in:</label>
+        <input name="checkin" type="date" id="checkin" autofocus autocomplete="off"/>
+        <script type='text/javascript'>
+            var today = new Date().toISOString().split('T')[0];
+            document.getElementsByName("checkin")[0].setAttribute('min', today);
+            </script>
+
+        <label for="checkout">Check out:</label>
+        <input name ="checkout" type="date" id="checkout"  autofocus autocomplete="off"/>
+        <script type='text/javascript'>
+            var today = new Date().toISOString().split('T')[0];
+            document.getElementsByName("checkout")[0].setAttribute('min', today);
+            </script>
+       
+        <label for="typeofroom">Type Of Room:</label>
+        <input type="text" id="typeofroom" list="typepilihan" autocomplete="off" />
+        <datalist id="typepilihan">
+          <option value="Family Deluxe">Family Deluxe</option>
+          <option value="Deluxe Room">Deluxe Room</option>
+          <option value="Suite Room">Suite Room</option>
+        </datalist>
+      
+        <label for="status">Status:</label>
+        <input type="text" id="status" list="pilihanStatus" autocomplete="off" />
+        <datalist id="pilihanStatus">
+          <option value="Dewasa">Dewasa</option>
+          <option value="Anak-anak">Anak-anak</option>
+        </datalist>
+
+        <label for="jumlah">Number Of People:</label>
+        <input type="number" id="jumlah" />
+
+        <label for="subtotal">Subtotal:</label>
+        <input type="number" id="subtotal" disabled />
+
+        <label for="diskon">Diskon:</label>
+        <input type="number" id="diskon" disabled />
+
+        <label for="total">Total:</label>
+        <input type="number" id="total" disabled />
+
+        <div class="tombol">
+          <input type="submit" value="Pesan" id="pesan" />
+          <input type="button" value="Hapus" id="hapus" />
+        </div>
+      </form>
+
+      <!-- Jika berhasil pesan akan menampilkan berkas output nya -->
+      <div class="output">
+        <h2>TICKET PAYMENT</h2>
+        <p>Nama: <span id="namaOutput"></span></p>
+        <p>Email: <span id="emailOutput"></span></p>
+        <p>Phone Number: <span id="phonenumberOutput"></span></p>
+        <p>Check In: <span id="checkinOutput"></span></p>
+        <p>Check Out: <span id="checkoutOutput"></span></p>
+        <p>Type Of Room: <span id="typeOutput"></span></p>
+        <p>Status: <span id="statusOutput"></span></p>
+        <p>Number Of People: <span id="jumlahOutput"></span></p>
+        <p>Subtotal: <span id="subtotalOutput"></span></p>
+        <p>Diskon: <span id="diskonOutput"></span></p>
+        <p>Total: <span id="totalOutput"></span></p>
+        <p><sup>*</sup>Harga 1 tiket: <span id="hargaTiket"></span></p>
+      </div>
+    </div>
+
+    <div class="informasi">
+      <span>Catatan:</span>
+      <span><sup>*</sup>Hanya terdapat 3 Jenis Kamar: Family Deluxe, Deluxe Room dan Suite Room <span class="">(Perhatikan huruf kecil dan besar nya)</span></span>
+      <span><sup>*</sup>Status hanya terdapat 2: Dewasa dan Anak-anak <span>(Perhatikan huruf kecil dan besar nya)</span></span>
+      <span><sup>*</sup>Jika membeli Jumlah Tiket Hotel lebih dari 5 bisa mendapat diskon 15% <span>(Tidak lebih dari 5 maka tidak dapat diskon)</span></span>
+    </div>
+    <nav>
+         <ul>
+         <li><a href="Home.html">HOME</a></li>
+         <li><a href="hotelbooking.html">BOOK NOW</a></li>
+         </ul>
+     </nav>
+    <script src="script.js"></script>
+  </body>
+</html>
